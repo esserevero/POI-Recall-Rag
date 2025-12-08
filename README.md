@@ -23,9 +23,9 @@
 
 ```
 POI-Recall/
-├── data/                   # 字幕文件目录（git 忽略）
+├── data/                   # 字幕文件目录
 │   └── examples/          # 示例字幕片段
-├── db/                    # Chroma 向量库（git 忽略）
+├── db/                    # Chroma 向量库
 ├── src/                   # 源代码
 │   ├── config.py         # 配置与常量
 │   ├── data_loader.py    # 字幕加载
@@ -99,12 +99,12 @@ python src/cli_app.py
 
 ## 开发进度
 
-- [x] 阶段 1：数据加载 & 分块
-- [x] 阶段 2：索引构建
-- [x] 阶段 3：RAG Pipeline
-- [x] 阶段 4：CLI 交互
-- [ ] 阶段 5：测试 & 文档
-- [ ] 阶段 6：Web UI（可选）
+- [x] 📁 数据加载与文本分块
+- [x] 🔍 向量索引构建
+- [x] 🤖 RAG 问答链路
+- [x] 💬 命令行交互界面
+- [ ] ✅ 单元测试与文档完善
+- [ ] 🌐 Web UI（可选）
 
 ## 注意事项
 
