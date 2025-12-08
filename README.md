@@ -14,8 +14,8 @@
 
 - **语言**: Python 3.12
 - **RAG 框架**: LangChain
-- **嵌入模型**: OpenAI text-embedding-3-small
-- **LLM**: OpenAI gpt-4o-mini
+- **嵌入模型**: Qwen3-Embedding-0.6B
+- **LLM**: deepseek-chat
 - **向量数据库**: Chroma
 - **配置管理**: python-dotenv
 
@@ -100,9 +100,9 @@ python src/cli_app.py
 ## 开发进度
 
 - [x] 阶段 1：数据加载 & 分块
-- [ ] 阶段 2：索引构建
-- [ ] 阶段 3：RAG Pipeline
-- [ ] 阶段 4：CLI 交互
+- [x] 阶段 2：索引构建
+- [x] 阶段 3：RAG Pipeline
+- [x] 阶段 4：CLI 交互
 - [ ] 阶段 5：测试 & 文档
 - [ ] 阶段 6：Web UI（可选）
 
@@ -110,7 +110,6 @@ python src/cli_app.py
 
 - 本项目仅用于学习和研究目的
 - 字幕文件不包含在仓库中，需自行准备
-- 使用 OpenAI API 会产生费用
 - 系统回答基于字幕文本，不保证 100% 准确
 
 ## License

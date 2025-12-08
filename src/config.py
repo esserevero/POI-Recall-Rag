@@ -17,13 +17,13 @@ class Config:
     # 项目根目录
     PROJECT_ROOT = Path(__file__).parent.parent
     
-    # OpenAI API 配置
-    OPENAI_API_KEY = os.getenv("OPENAI_API_KEY", "")
-    OPENAI_API_BASE = os.getenv("OPENAI_API_BASE", None)
+    # DeepSeek API 配置（用于 LLM）
+    DEEPSEEK_API_KEY = os.getenv("DEEPSEEK_API_KEY", "")
+    DEEPSEEK_API_BASE = os.getenv("DEEPSEEK_API_BASE", "https://api.deepseek.com")
     
     # 模型配置
-    EMBEDDING_MODEL = os.getenv("EMBEDDING_MODEL", "text-embedding-3-small")
-    LLM_MODEL = os.getenv("LLM_MODEL", "gpt-4o-mini")
+    EMBEDDING_MODEL = os.getenv("EMBEDDING_MODEL", "Qwen/Qwen3-Embedding-0.6B")  # 本地嵌入模型
+    LLM_MODEL = os.getenv("LLM_MODEL", "deepseek-chat")
     
     # 路径配置
     CHROMA_PERSIST_DIR = PROJECT_ROOT / os.getenv("CHROMA_PERSIST_DIR", "db")
@@ -36,13 +36,18 @@ class Config:
     
     # 检索配置
     RETRIEVAL_K = 5  # 检索 top-k 文档
+    RETRIEVAL_SCORE_THRESHOLD = 0.3  # 最小相似度阈值
+    
+    # LLM 配置
+    LLM_TEMPERATURE = 0.7  # 生成温度（平衡创造性和准确性）
+    LLM_MAX_TOKENS = 1000  # 最大生成 token 数
     
     @classmethod
     def validate(cls):
         """验证配置是否完整"""
-        if not cls.OPENAI_API_KEY:
+        if not cls.DEEPSEEK_API_KEY:
             raise ValueError(
-                "OPENAI_API_KEY 未设置。请在 .env 文件中配置或设置环境变量。"
+                "DEEPSEEK_API_KEY 未设置。LLM 需要 DeepSeek API Key。"
             )
         
         # 确保目录存在
