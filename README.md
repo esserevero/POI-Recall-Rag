@@ -60,9 +60,9 @@ pip install -r requirements.txt
 cp .env.example .env
 ```
 
-编辑 `.env` 文件：
+编辑 `.env` 文件，填入你的 DeepSeek API Key：
 ```
-OPENAI_API_KEY=sk-your-actual-api-key-here
+DEEPSEEK_API_KEY=your-deepseek-api-key-here
 ```
 
 ### 3. 准备字幕文件
